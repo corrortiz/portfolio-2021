@@ -36,7 +36,10 @@ function Header() {
         label={language}
         icon={<ChatOption color="brand" />}
         items={[
-          { label: "Spanish", onClick: () => setLanguage("Spanish") },
+          {
+            label: "Español",
+            onClick: () => setLanguage("Español"),
+          },
           { label: "English", onClick: () => setLanguage("English") },
         ]}
       />
