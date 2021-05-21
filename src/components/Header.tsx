@@ -3,7 +3,7 @@ import { ChatOption } from "grommet-icons";
 import { ChangeEvent, useState } from "react";
 import style from "styled-components";
 import { Contact, LocaleChange, Projects, Services } from "../assets";
-import { useAppDispatch } from "../hooks";
+import { useAppDispatch, useAppSelector } from "../hooks";
 import {
   changeLanguage,
   openSnackBar,
@@ -23,13 +23,15 @@ const NavigationStyle = style.div`
 
 function Header() {
   const [language, setLanguage] = useState("English");
+  const global = useAppSelector((state) => state.global);
+
   const dispatch = useAppDispatch();
 
   const handleChangeOfLanguage = (event: ChangeEvent<HTMLInputElement>) => {
     const newLanguage = event.target.innerText;
     setLanguage(newLanguage);
     dispatch(changeLanguage(newLanguage));
-    dispatch(setSnackBarMessage(setText(LocaleChange)));
+    dispatch(setSnackBarMessage(setText(LocaleChange, global.language)));
     dispatch(openSnackBar());
   };
 
@@ -45,9 +47,9 @@ function Header() {
         AO HyS
       </HeadingStyle>
       <NavigationStyle>
-        <Anchor href="#" label={setText(Services)} />
-        <Anchor href="#" label={setText(Projects)} />
-        <Anchor href="#" label={setText(Contact)} />
+        <Anchor href="#" label={setText(Services, global.language)} />
+        <Anchor href="#" label={setText(Projects, global.language)} />
+        <Anchor href="#" label={setText(Contact, global.language)} />
       </NavigationStyle>
       <Menu
         label={language}

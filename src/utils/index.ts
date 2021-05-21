@@ -1,7 +1,3 @@
-import { store } from "../store";
-
-export function setText(text: { es: string; en: string }) {
-  const state = store.getState();
-  const language = state.global.language;
+export function setText(text: { es: string; en: string }, language: string) {
   return language === "en" ? text.en : text.es;
 }
