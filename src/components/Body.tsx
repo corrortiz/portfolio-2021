@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Player } from '@lottiefiles/react-lottie-player';
-import { Heading, Text } from 'grommet';
+import { Heading, Text, Button } from 'grommet';
 import webdev from '../assets/lottie/webdev.json';
 import { theme, device } from '../theme';
 
@@ -8,20 +8,19 @@ const BodyContainer = styled.div`
   display: flex;
   align-items: flex-start;
   height: calc(100vh - 10rem);
-  padding: 2rem 25%;
+  padding: 2rem;
 
-  & > * {
-    margin-bottom: 2rem;
+  @media screen and (${device['4k']}) {
+    padding: 2rem 20%;
   }
 
-  @media ${device.laptop} {
+  @media screen and (${device.laptop}) {
+    padding: 2rem 5%;
+  }
+
+  @media screen and (${device.tablet}) {
     flex-direction: column;
-    padding: 2rem;
-  }
-
-  @media ${device.tablet} {
-    padding: 3rem;
-    flex-direction: row;
+    align-items: center;
   }
 `;
 
@@ -30,18 +29,13 @@ const AStyled = styled.a`
 `;
 
 const TextSection = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding-top: 2rem;
 `;
 
-const LottieSection = styled.div`
-  @media ${device.laptop} {
-    align-self: center;
-  }
-
-  @media ${device.tablet} {
-    align-self: flex-start;
-  }
-`;
+const LottieSection = styled.div``;
 
 function Body() {
   return (
@@ -60,18 +54,24 @@ function Body() {
         <Heading style={{ marginTop: 0 }} level={2} size='large'>
           Development
         </Heading>
-        <Text>
+        <Text style={{ marginBottom: '2rem' }}>
           We make it easy for companies to transform their ideas into innovative
           solutions, in a sensitive, adequate and personalized way to meet the
           needs of each organization.
         </Text>
+        <Button
+          style={{ maxWidth: '200px' }}
+          size='large'
+          primary
+          label='Contact Us'
+        />
       </TextSection>
       <LottieSection>
         <Player
           autoplay
           loop
           src={webdev}
-          style={{ height: '400px', width: '600px', paddingLeft: 100 }}
+          style={{ height: '400px', width: '500px' }}
         />
       </LottieSection>
     </BodyContainer>
