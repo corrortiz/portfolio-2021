@@ -1,14 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Grommet } from "grommet";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Grommet } from 'grommet';
+import { Provider } from 'react-redux';
 
-import Header from "./components/Header";
-import SnackBar from "./components/SnackBar";
-import Body from "./components/Body";
+import Header from './components/Header';
+import SnackBar from './components/SnackBar';
+import Body from './components/Body';
 
-import { theme } from "./theme";
-import { store } from "./store";
+import { theme } from './theme';
+import { store } from './store';
 
 function App() {
   return (
@@ -26,5 +26,5 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );

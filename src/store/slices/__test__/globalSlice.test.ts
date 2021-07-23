@@ -1,4 +1,4 @@
-import { store } from "../..";
+import { store } from '../..';
 import {
   changeLanguage,
   closeSnackBar,
@@ -6,28 +6,28 @@ import {
   openSnackBar,
   setSnackBarMessage,
   showLoading,
-} from "../globalSlice";
+} from '../globalSlice';
 
-describe("Global Slice", () => {
+describe('Global Slice', () => {
   const dispatch = store.dispatch;
 
-  it("has the correct initialState", () => {
+  it('has the correct initialState', () => {
     const state = store.getState().global;
     expect(state).toStrictEqual({
-      language: "en",
+      language: 'en',
       openSnackBar: false,
-      snackBarMessage: "",
+      snackBarMessage: '',
       loading: false,
     });
   });
 
-  it("changes the language", () => {
-    dispatch(changeLanguage("Español"));
+  it('changes the language', () => {
+    dispatch(changeLanguage('Español'));
     const state = store.getState().global;
-    expect(state.language).toBe("es");
+    expect(state.language).toBe('es');
   });
 
-  it("open and close the snack bar", () => {
+  it('open and close the snack bar', () => {
     dispatch(openSnackBar());
     const state = store.getState().global;
     expect(state.openSnackBar).toBe(true);
@@ -36,13 +36,13 @@ describe("Global Slice", () => {
     expect(newState.openSnackBar).toBe(false);
   });
 
-  it("changes the message for the snack bar", () => {
-    dispatch(setSnackBarMessage("new message"));
+  it('changes the message for the snack bar', () => {
+    dispatch(setSnackBarMessage('new message'));
     const state = store.getState().global;
-    expect(state.snackBarMessage).toBe("new message");
+    expect(state.snackBarMessage).toBe('new message');
   });
 
-  it("shows and hide the loading state", () => {
+  it('shows and hide the loading state', () => {
     dispatch(showLoading());
     const state = store.getState().global;
     expect(state.loading).toBe(false);
@@ -51,5 +51,3 @@ describe("Global Slice", () => {
     expect(newState.loading).toBe(false);
   });
 });
-
-
