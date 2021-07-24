@@ -9,6 +9,7 @@ import {
   openSnackBar,
   setSnackBarMessage,
 } from '../store/slices/globalSlice';
+import { device } from '../theme';
 import { setText } from '../utils';
 
 const HeadingStyle = styled(Heading)`
@@ -18,6 +19,13 @@ const HeadingStyle = styled(Heading)`
 const NavigationStyle = styled.div`
   & > * {
     margin-right: 20px;
+  }
+`;
+
+const HeaderContainer = styled(Box)`
+  @media screen and (${device.tablet}) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -36,7 +44,7 @@ function Header() {
   };
 
   return (
-    <Box
+    <HeaderContainer
       tag='header'
       direction='row'
       align='center'
@@ -59,7 +67,7 @@ function Header() {
           { label: 'English', onClick: handleChangeOfLanguage },
         ]}
       />
-    </Box>
+    </HeaderContainer>
   );
 }
 
