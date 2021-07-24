@@ -1,2 +1,4 @@
 {
+  "cSpell.words": ["aohys", "browserslist", "lottiefiles", "webdev"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

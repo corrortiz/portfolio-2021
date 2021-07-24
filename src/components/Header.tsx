@@ -1,28 +1,36 @@
-import { Box, Heading, Menu, Anchor } from "grommet";
-import { ChatOption } from "grommet-icons";
-import { ChangeEvent, useState } from "react";
-import style from "styled-components";
-import { Contact, LocaleChange, Projects, Services } from "../assets";
-import { useAppDispatch, useAppSelector } from "../hooks";
+import { Box, Heading, Menu, Anchor } from 'grommet';
+import { ChatOption } from 'grommet-icons';
+import { ChangeEvent, useState } from 'react';
+import styled from 'styled-components';
+import { Contact, LocaleChange, Projects, Services } from '../assets';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import {
   changeLanguage,
   openSnackBar,
   setSnackBarMessage,
-} from "../store/slices/globalSlice";
-import { setText } from "../utils";
+} from '../store/slices/globalSlice';
+import { device } from '../theme';
+import { setText } from '../utils';
 
-const HeadingStyle = style(Heading)`
+const HeadingStyle = styled(Heading)`
   margin-right: auto;
 `;
 
-const NavigationStyle = style.div`
+const NavigationStyle = styled.div`
   & > * {
-    margin-right: 20px
+    margin-right: 20px;
+  }
+`;
+
+const HeaderContainer = styled(Box)`
+  @media screen and (${device.tablet}) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 function Header() {
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState('English');
   const global = useAppSelector((state) => state.global);
 
   const dispatch = useAppDispatch();
@@ -36,30 +44,30 @@ function Header() {
   };
 
   return (
-    <Box
-      tag="header"
-      direction="row"
-      align="center"
-      pad={{ left: "medium", right: "small", vertical: "small" }}
+    <HeaderContainer
+      tag='header'
+      direction='row'
+      align='center'
+      pad={{ left: 'medium', right: 'small', vertical: 'small' }}
       style={{ zIndex: 1 }}
     >
-      <HeadingStyle level="1" margin="none" color="brand">
+      <HeadingStyle level='1' margin='none' color='brand'>
         AO HyS
       </HeadingStyle>
       <NavigationStyle>
-        <Anchor href="#" label={setText(Services, global.language)} />
-        <Anchor href="#" label={setText(Projects, global.language)} />
-        <Anchor href="#" label={setText(Contact, global.language)} />
+        <Anchor href='#' label={setText(Services, global.language)} />
+        <Anchor href='#' label={setText(Projects, global.language)} />
+        <Anchor href='#' label={setText(Contact, global.language)} />
       </NavigationStyle>
       <Menu
         label={language}
-        icon={<ChatOption color="brand" />}
+        icon={<ChatOption color='brand' />}
         items={[
-          { label: "Español", onClick: handleChangeOfLanguage },
-          { label: "English", onClick: handleChangeOfLanguage },
+          { label: 'Español', onClick: handleChangeOfLanguage },
+          { label: 'English', onClick: handleChangeOfLanguage },
         ]}
       />
-    </Box>
+    </HeaderContainer>
   );
 }
 

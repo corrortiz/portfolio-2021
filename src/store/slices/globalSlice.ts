@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface GlobalState {
   language: string;
@@ -8,18 +8,18 @@ interface GlobalState {
 }
 
 const initialState: GlobalState = {
-  language: "en",
+  language: 'en',
   openSnackBar: false,
-  snackBarMessage: "",
+  snackBarMessage: '',
   loading: false,
 };
 
 export const globalSlice = createSlice({
-  name: "global",
+  name: 'global',
   initialState,
   reducers: {
     changeLanguage: (state, action: PayloadAction<string>) => {
-      state.language = action.payload === "Español" ? "es" : "en";
+      state.language = action.payload === 'Español' ? 'es' : 'en';
     },
     openSnackBar: (state) => {
       state.openSnackBar = true;
