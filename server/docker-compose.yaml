@@ -4,12 +4,12 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: server-cc-postgres
+    container_name: server-portfolio2021-postgres
     restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: server-cc
+      POSTGRES_DB: portfolio2021
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - 15432:5432
@@ -20,7 +20,7 @@ services:
         aliases:
           - postgres_host
   pgadmin:
-    container_name: server-cc-pgadmin4
+    container_name: portfolio2021-pgadmin4
     image: dpage/pgadmin4
     restart: always
     depends_on:

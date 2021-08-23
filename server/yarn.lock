@@ -81,35 +81,35 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@graphql-tools/merge@8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.0.1.tgz#4cb94998e7c61abc6ebec54edca5c19f06c3330d"
-  integrity sha512-YAozogbjC2Oun+UcwG0LZFumhlCiHBmqe68OIf7bqtBdp4pbPAiVuK/J9oJqRVJmzvUqugo6RD9zz1qDTKZaiQ==
+"@graphql-tools/merge@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.0.2.tgz#510d6a8da6a761853e18d36710a23791edbc2405"
+  integrity sha512-li/bl6RpcZCPA0LrSxMYMcyYk+brer8QYY25jCKLS7gvhJkgzEFpCDaX43V1+X13djEoAbgay2mCr3dtfJQQRQ==
   dependencies:
-    "@graphql-tools/utils" "8.1.1"
+    "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
 "@graphql-tools/mock@^8.1.2":
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-8.2.1.tgz#a08d7facb323b19d6b5aaab0c87787cce6f27d56"
-  integrity sha512-/DyU742thZ3wSR8NxbzeV2K5sxtfPcnRJDuaN+WuHDOE1X1lsFiS49J0TouEnZCfLuAmhSjUMT/2GbD0xu6ggw==
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-8.2.2.tgz#ff6b520a7234f23bff302406286d2e68b8177792"
+  integrity sha512-3cUJi14UHW1/8mebbXlAqfZl78IxeKzF2QlcJV5PSRQe27Dp/UnkHyid1UH/iwBdA98J7l0uw8NU1MRRVjhjIA==
   dependencies:
-    "@graphql-tools/schema" "^8.1.1"
-    "@graphql-tools/utils" "8.1.1"
+    "@graphql-tools/schema" "^8.1.2"
+    "@graphql-tools/utils" "^8.1.1"
     fast-json-stable-stringify "^2.1.0"
     tslib "~2.3.0"
 
-"@graphql-tools/schema@^8.0.0", "@graphql-tools/schema@^8.1.1":
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.1.1.tgz#5de95a8f6cedaf91fa2f9e9e7fa9fae1d27a7c4f"
-  integrity sha512-u+0kxPtuP+GcKnGNt459Ob7iIpzesIJeJTmPPailaG7ZhB5hkXIizl4uHrzEIAh2Ja1P/VA8sEBYpu1N0n6Mmg==
+"@graphql-tools/schema@^8.0.0", "@graphql-tools/schema@^8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.1.2.tgz#913879da1a7889a9488e9b7dc189e7c83eff74be"
+  integrity sha512-rX2pg42a0w7JLVYT+f/yeEKpnoZL5PpLq68TxC3iZ8slnNBNjfVfvzzOn8Q8Q6Xw3t17KP9QespmJEDfuQe4Rg==
   dependencies:
-    "@graphql-tools/merge" "8.0.1"
-    "@graphql-tools/utils" "8.1.1"
+    "@graphql-tools/merge" "^8.0.2"
+    "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
     value-or-promise "1.0.10"
 
-"@graphql-tools/utils@8.1.1", "@graphql-tools/utils@^8.0.0":
+"@graphql-tools/utils@^8.0.0", "@graphql-tools/utils@^8.1.1":
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.1.1.tgz#2ef056a1d6e1e909085e1115d3bb48f890c2a2b6"
   integrity sha512-QbFNoBmBiZ+ej4y6mOv8Ba4lNhcrTEKXAhZ0f74AhdEXi7b9xbGUH/slO5JaSyp85sGQYIPmxjRPpXBjLklbmw==
@@ -455,9 +455,9 @@
     mongodb "*"
 
 "@types/node@*", "@types/node@^16.4.10":
-  version "16.6.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.2.tgz#331b7b9f8621c638284787c5559423822fdffc50"
-  integrity sha512-LSw8TZt12ZudbpHc6EkIyDM3nHVWKYrAvGy6EAJfNfjusbwnThqjqxUKKRwuV3iWYeW/LYMzNgaq3MaLffQ2xA==
+  version "16.7.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.1.tgz#c6b9198178da504dfca1fd0be9b2e1002f1586f0"
+  integrity sha512-ncRdc45SoYJ2H4eWU9ReDfp3vtFqDYhjOsKlFFUDEn8V1Bgr2RjYal8YT5byfadWIRluhPFU6JiDOl0H6Sl87A==
 
 "@types/node@^10.1.0":
   version "10.17.60"
@@ -465,9 +465,9 @@
   integrity sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==
 
 "@types/node@^14.11.2":
-  version "14.17.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.10.tgz#93f4b095af275a0427114579c10ec7aa696729d7"
-  integrity sha512-09x2d6kNBwjHgyh3jOUE2GE4DFoxDriDvWdu6mFhMP1ysynGYazt4ecZmJlL6/fe4Zi2vtYvTvtL7epjQQrBhA==
+  version "14.17.11"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.11.tgz#82d266d657aec5ff01ca59f2ffaff1bb43f7bf0f"
+  integrity sha512-n2OQ+0Bz6WEsUjrvcHD1xZ8K+Kgo4cn9/w94s1bJS690QMUWfJPW/m7CCb7gPkA1fcYwL2UpjXP/rq/Eo41m6w==
 
 "@types/qs@*":
   version "6.9.7"
@@ -1053,9 +1053,9 @@ braces@^3.0.1, braces@~3.0.2:
     fill-range "^7.0.1"
 
 bson@^4.4.0:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-4.4.1.tgz#682c3cb8b90b222414ce14ef8398154ba2cc21bc"
-  integrity sha512-Uu4OCZa0jouQJCKOk1EmmyqtdWAP5HVLru4lQxTwzJzxT+sJ13lVpEZU/MATDxtHiekWMAL84oQY3Xn1LpJVSg==
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-4.5.0.tgz#b4897d1a9360bbb3b4e64bdb41fea3bafdf5c373"
+  integrity sha512-WoSOKryfrKx0aqhPz/DJsUlrMlOL+hkW+469Q5z5E/EQWF2xilOH7h/s5HH4j9iLRzVDwKFwVNQ3Mba16srmlw==
   dependencies:
     buffer "^5.6.0"
 
@@ -1668,7 +1668,7 @@ eslint-config-standard@^16.0.3:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-16.0.3.tgz#6c8761e544e96c531ff92642eeb87842b8488516"
   integrity sha512-x4fmJL5hGqNJKGHSjnLdgA6U6h1YW/G2dW9fA+cyVur4SK6lyue8+UgNKWlZtUDTXvgKDD/Oa3GQjmB5kjtVvg==
 
-eslint-import-resolver-node@^0.3.5:
+eslint-import-resolver-node@^0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.6.tgz#4048b958395da89668252001dbd9eca6b83bacbd"
   integrity sha512-0En0w03NRVMn9Uiyn8YRPDKvWjxCWkslUEhGNTdGx15RvPJYQ+lbOlqrlNI2vEAs4pDYK4f/HN2TbDmk5TP0iw==
@@ -1693,25 +1693,25 @@ eslint-plugin-es@^3.0.0:
     regexpp "^3.0.0"
 
 eslint-plugin-import@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.24.0.tgz#697ffd263e24da5e84e03b282f5fb62251777177"
-  integrity sha512-Kc6xqT9hiYi2cgybOc0I2vC9OgAYga5o/rAFinam/yF/t5uBqxQbauNPMC6fgb640T/89P0gFoO27FOilJ/Cqg==
+  version "2.24.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.24.1.tgz#64aba8b567a1ba9921d5465586e86c491b8e2135"
+  integrity sha512-KSFWhNxPH8OGJwpRJJs+Z7I0a13E2iFQZJIvSnCu6KUs4qmgAm3xN9GYBCSoiGWmwA7gERZPXqYQjcoCROnYhQ==
   dependencies:
     array-includes "^3.1.3"
     array.prototype.flat "^1.2.4"
     debug "^2.6.9"
     doctrine "^2.1.0"
-    eslint-import-resolver-node "^0.3.5"
+    eslint-import-resolver-node "^0.3.6"
     eslint-module-utils "^2.6.2"
     find-up "^2.0.0"
     has "^1.0.3"
-    is-core-module "^2.4.0"
+    is-core-module "^2.6.0"
     minimatch "^3.0.4"
-    object.values "^1.1.3"
+    object.values "^1.1.4"
     pkg-up "^2.0.0"
     read-pkg-up "^3.0.0"
     resolve "^1.20.0"
-    tsconfig-paths "^3.9.0"
+    tsconfig-paths "^3.10.1"
 
 eslint-plugin-node@^11.1.0:
   version "11.1.0"
@@ -2010,9 +2010,9 @@ fast-levenshtein@^2.0.6:
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
 fastq@^1.6.0:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.11.1.tgz#5d8175aae17db61947f8b162cfc7f63264d22807"
-  integrity sha512-HOnr8Mc60eNYl1gzwp6r5RoUyAn5/glBolUzP/Ez6IFVPMPirxn/9phgL6zhOtaTy7ISwPvQ+wT+hfcRZh/bzw==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.12.0.tgz#ed7b6ab5d62393fb2cc591c853652a5c318bf794"
+  integrity sha512-VNX0QkHK3RsXVKr9KrlUv/FoTa0NdbYoHHl7uXHv2rzyHSlxjdNAKug2twd9luJxpcyNeAgf5iPPMutJO67Dfg==
   dependencies:
     reusify "^1.0.4"
 
@@ -2659,7 +2659,7 @@ is-ci@^2.0.0:
   dependencies:
     ci-info "^2.0.0"
 
-is-core-module@^2.2.0, is-core-module@^2.4.0:
+is-core-module@^2.2.0, is-core-module@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.6.0.tgz#d7553b2526fe59b92ba3e40c8df757ec8a709e19"
   integrity sha512-wShG8vs60jKfPWpF2KZRaAtvt3a20OAn7+IJ6hLPECpSABLcKtFKTTI4ZtH5QcBruBHlq+WsdHWyz0BCZW7svQ==
@@ -3500,7 +3500,7 @@ object.pick@^1.2.0, object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
-object.values@^1.1.3, object.values@^1.1.4:
+object.values@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/object.values/-/object.values-1.1.4.tgz#0d273762833e816b693a637d30073e7051535b30"
   integrity sha512-TnGo7j4XSnKQoK3MfvkzqKCi0nVe/D9I9IjwTNYdb/fxYHpjrluHVOgw0AF6jrRFGMPHdfuidR09tIDiIvnaSg==
@@ -4680,7 +4680,7 @@ tsconfig-paths@3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tsconfig-paths@^3.9.0:
+tsconfig-paths@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.10.1.tgz#79ae67a68c15289fdf5c51cb74f397522d795ed7"
   integrity sha512-rETidPDgCpltxF7MjBZlAFPUHv5aHH2MymyPvh+vEyWAED4Eb/WeMbsnD/JDr4OKPOA1TssDHgIcpTN5Kh0p6Q==

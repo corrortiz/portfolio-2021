@@ -1,12 +1,11 @@
 import path from 'path'
 import { MikroORM } from '@mikro-orm/core'
-import { Post } from './entities/Post'
-import { Patient } from './entities/Patient'
+import { Project } from './entities/Project'
 import { User } from './entities/User'
 
 export default {
-  entities: [Post, Patient, User],
-  dbName: 'server-cc',
+  entities: [Project, User],
+  dbName: 'portfolio2021',
   user: 'admin',
   password: 'admin',
   type: 'postgresql',

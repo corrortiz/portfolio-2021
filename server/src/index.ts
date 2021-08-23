@@ -9,8 +9,7 @@ import cors from 'cors'
 
 import dbConfig from './mikro-orm.config'
 import { buildSchema } from 'type-graphql'
-import { PostResolver } from './resolvers/post'
-import { PatientResolver } from './resolvers/patient'
+import { ProjectResolver } from './resolvers/project'
 import { UserResolver } from './resolvers/user'
 
 const main = async () => {
@@ -50,7 +49,7 @@ const main = async () => {
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [PostResolver, PatientResolver, UserResolver],
+      resolvers: [ProjectResolver, UserResolver],
       validate: false
     }),
     context: ({ req, res }) => ({ em: orm.em, req, res })

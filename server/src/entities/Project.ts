@@ -1,9 +1,9 @@
 import { Entity, PrimaryKey, Property } from '@mikro-orm/core'
-import { Field, ObjectType } from 'type-graphql'
+import { Field, InputType, ObjectType } from 'type-graphql'
 
 @ObjectType()
 @Entity()
-export class Post {
+export class Project {
   @Field()
   @PrimaryKey()
   id: number;
@@ -18,13 +18,32 @@ export class Post {
 
   @Field(() => String)
   @Property({ type: 'text' })
-  ailment!: string;
-
+  title!: string;
+ 
   @Field(() => String)
   @Property({ type: 'text' })
-  patientRelative!: string;
-
-  @Field(() => Boolean)
+  description!: string;
+  
+  @Field(() => String)
   @Property({ type: 'text' })
-  isPatientRelativeDeceased!: boolean;
+  URL!: string;
+  
+  @Field(() => String)
+  @Property({ type: 'text' })
+  images!: string;
+}
+
+@InputType()
+export class ProjectInput {
+  @Field(() => String)
+  title!: string;
+ 
+  @Field(() => String)
+  description!: string;
+  
+  @Field(() => String)
+  URL!: string;
+  
+  @Field(() => String)
+  images!: string;
 }
