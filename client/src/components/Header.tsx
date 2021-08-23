@@ -1,6 +1,7 @@
 import { Box, Heading, Menu, Anchor } from 'grommet';
 import { ChatOption } from 'grommet-icons';
 import { ChangeEvent, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { Contact, LocaleChange, Projects, Services } from '../assets';
 import { useAppDispatch, useAppSelector } from '../hooks';
@@ -14,6 +15,7 @@ import { setText } from '../utils';
 
 const HeadingStyle = styled(Heading)`
   margin-right: auto;
+  cursor: pointer;
 `;
 
 const NavigationStyle = styled.div`
@@ -30,6 +32,7 @@ const HeaderContainer = styled(Box)`
 `;
 
 function Header() {
+  const history = useHistory();
   const [language, setLanguage] = useState('English');
   const global = useAppSelector((state) => state.global);
 
@@ -43,6 +46,10 @@ function Header() {
     dispatch(openSnackBar());
   };
 
+  const navigate = (path: string) => {
+    history.push(path);
+  };
+
   return (
     <HeaderContainer
       tag='header'
@@ -51,13 +58,30 @@ function Header() {
       pad={{ left: 'medium', right: 'small', vertical: 'small' }}
       style={{ zIndex: 1 }}
     >
-      <HeadingStyle level='1' margin='none' color='brand'>
+      <HeadingStyle
+        level='1'
+        margin='none'
+        color='brand'
+        onClick={() => navigate('/')}
+      >
         AO HyS
       </HeadingStyle>
       <NavigationStyle>
-        <Anchor href='#' label={setText(Services, global.language)} />
-        <Anchor href='#' label={setText(Projects, global.language)} />
-        <Anchor href='#' label={setText(Contact, global.language)} />
+        <Anchor
+          href='#'
+          label={setText(Services, global.language)}
+          onClick={() => navigate('services')}
+        />
+        <Anchor
+          href='#'
+          label={setText(Projects, global.language)}
+          onClick={() => navigate('projects')}
+        />
+        <Anchor
+          href='#'
+          label={setText(Contact, global.language)}
+          onClick={() => navigate('contact')}
+        />
       </NavigationStyle>
       <Menu
         label={language}
