@@ -1,0 +1,46 @@
+version: '3'
+services:
+  postgres:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: server-cc-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: server-cc
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 15432:5432
+    volumes:
+      - pgdata/var/lib/postgresql/data
+    networks:
+      postgres_network:
+        aliases:
+          - postgres_host
+  pgadmin:
+    container_name: server-cc-pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - 5050:80
+  redis:
+    image: 'redis:alpine'
+    hostname: redis
+    volumes:
+      - redisData:/var/lib/redis
+    ports:
+      - '6379:6379'
+volumes:
+  pgdata: {}
+  redisData: {}
+networks:
+  postgres_network:
+    name: postgres_net
+    driver: bridge
