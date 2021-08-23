@@ -3,6 +3,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import { Heading, Text, Button } from 'grommet';
 import webdev from '../assets/lottie/webdev.json';
 import { theme, device } from '../theme';
+import { useAllProjectsQuery } from '../generated/graphql';
 
 const BodyContainer = styled.div`
   display: flex;
@@ -38,6 +39,12 @@ const TextSection = styled.div`
 const LottieSection = styled.div``;
 
 function Body() {
+  const { loading, error, data } = useAllProjectsQuery();
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  console.log(data?.projects);
+
   return (
     <BodyContainer>
       <TextSection>

@@ -1,0 +1,9 @@
+query allProjects{
+  projects{
+    id
+    title
+    description
+    URL
+    images
+  }
+}

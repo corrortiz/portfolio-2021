@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.4.8",
     "@lottiefiles/react-lottie-player": "^3.3.1",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.6.1",
+    "graphql": "^15.5.1",
     "grommet": "^2.17.3",
     "grommet-icons": "^4.6.0",
     "react": "^17.0.2",
@@ -21,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix"
+    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
+    "gql": "graphql-codegen --config codegen.yml"
   },
   "browserslist": {
     "production": [
@@ -36,6 +39,8 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.1.1",
+    "@graphql-codegen/typescript": "2.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.0",
@@ -54,7 +59,10 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
     "prettier": "^2.3.2",
-    "prettier-eslint": "^12.0.0"
+    "prettier-eslint": "^12.0.0",
+    "@graphql-codegen/typescript-operations": "2.1.0",
+    "@graphql-codegen/typescript-react-apollo": "3.1.0",
+    "@graphql-codegen/introspection": "2.1.0"
   },
   "husky": {
     "hooks": {
