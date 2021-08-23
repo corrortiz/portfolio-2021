@@ -15,7 +15,7 @@ export class ProjectResolver {
   }
 
   @Mutation(() => Project)
-  async createPost (
+  async createProject (
     @Arg('payload') payload: ProjectInput,
     @Ctx() { em }: MyContext
   ): Promise<Project> {
