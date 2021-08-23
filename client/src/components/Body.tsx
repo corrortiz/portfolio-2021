@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Home from '../domain/Home';
 import Projects from '../domain/Projects';
+import UploadAProject from '../domain/UploadProject';
 
 function Body() {
   return (
@@ -16,6 +17,9 @@ function Body() {
       </Route>
       <Route exact path='/contact'>
         <h1>Contact</h1>
+      </Route>
+      <Route exact path='/upload-a-project'>
+        <UploadAProject />
       </Route>
     </Switch>
   );

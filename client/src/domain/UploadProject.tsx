@@ -1,51 +1,82 @@
-/* eslint-disable indent */
+import { Button, Form, TextArea, TextInput } from 'grommet';
+import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { device } from '../theme';
-import { useAllProjectsQuery } from '../generated/graphql';
+
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: 85vh;
+  padding: 2rem 20%;
 
   @media screen and (${device['4k']}) {
-    padding: 2rem 10%;
+    padding: 2rem 30%;
   }
 
   @media screen and (${device.laptop}) {
-    padding: 2rem 5%;
+    padding: 2rem 15%;
   }
 
   @media screen and (${device.tablet}) {
     flex-direction: column;
     align-items: center;
+    padding: 2rem 0%;
+  }
+
+  & * {
+    margin-bottom: 25px;
   }
 `;
 
-const TextSection = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-top: 2rem;
+const SummitButtonWrapper = styled.div`
+  align-self: center;
+  margin-top: 10px;
 `;
 
-function Home() {
-  const { loading, error, data } = useAllProjectsQuery();
+interface ProjectInput {
+  projectName: string;
+  projectDescription: string;
+  projectURL: string;
+  projectImage: string;
+}
 
-  if (error) throw new Error(error.message);
-  if (loading) <div>...loading</div>;
+function UploadAProject() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ProjectInput>();
+  console.log(errors);
 
   return (
     <ProjectsContainer>
-      {data?.projects?.length
-        ? data?.projects?.map((project) => (
-            <div key={project.id}>
-              <TextSection>{project.title}</TextSection>
-              <TextSection>{project.description}</TextSection>
-              <img src={project.images} />
-            </div>
-          ))
-        : null}
+      <Form onSubmit={handleSubmit((data) => console.log(data))}>
+        <TextInput
+          id='text-input-project-name'
+          placeholder='Project Name'
+          {...register('projectName', { required: true })}
+        />
+        <TextArea
+          id='text-area-description'
+          placeholder='Project Description'
+          {...register('projectDescription', { required: true })}
+        />
+        <TextInput
+          id='text-input-project-url'
+          placeholder='Project URL'
+          {...register('projectURL', { required: true })}
+        />
+        <TextInput
+          id='text-input-project-image'
+          placeholder='Project Image'
+          {...register('projectImage', { required: true })}
+        />
+        <SummitButtonWrapper>
+          <Button type='submit' primary label='Submit' />
+        </SummitButtonWrapper>
+      </Form>
     </ProjectsContainer>
   );
 }
 
-export default Home;
+export default UploadAProject;
