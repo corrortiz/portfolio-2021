@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import Header from '../Header';
 
 describe('Testing Header', () => {
-  it('renders correctly', async () => {
+  it('renders correctly', async() => {
     const { getByText } = render(<Header />);
 
     expect(getByText('AO HyS')).toBeDefined();

@@ -1,4 +1,5 @@
-import { Button, Form, TextArea, TextInput } from 'grommet';
+import { FormGroup, InputGroup, Intent } from '@blueprintjs/core';
+import { Button, Form } from 'grommet';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { device } from '../theme';
@@ -22,10 +23,6 @@ const ProjectsContainer = styled.div`
     align-items: center;
     padding: 2rem 0%;
   }
-
-  & * {
-    margin-bottom: 25px;
-  }
 `;
 
 const SummitButtonWrapper = styled.div`
@@ -44,19 +41,38 @@ function UploadAProject() {
   const {
     register,
     handleSubmit,
+    clearErrors,
     formState: { errors },
   } = useForm<ProjectInput>();
-  console.log(errors);
 
   return (
     <ProjectsContainer>
-      <Form onSubmit={handleSubmit((data) => console.log(data))}>
-        <TextInput
-          id='text-input-project-name'
-          placeholder='Project Name'
-          {...register('projectName', { required: true })}
-        />
-        <TextArea
+      <Form
+        onSubmit={handleSubmit((data) => {
+          console.log(data);
+          if (data) {
+            clearErrors();
+          }
+        })}
+      >
+        <FormGroup
+          label='Project Name'
+          labelFor='text-input-project-name'
+          intent={errors.projectName ? Intent.DANGER : Intent.NONE}
+          helperText={errors.projectName ? 'This is required' : ''}
+        >
+          <InputGroup
+            id='text-input-project-name'
+            placeholder='Project Name'
+            intent={errors.projectName ? Intent.DANGER : Intent.NONE}
+            leftIcon='code'
+            large
+            round
+            color={'#0D8050'}
+            {...register('projectName', { required: true })}
+          />
+        </FormGroup>
+        {/* <TextArea
           id='text-area-description'
           placeholder='Project Description'
           {...register('projectDescription', { required: true })}
@@ -70,7 +86,7 @@ function UploadAProject() {
           id='text-input-project-image'
           placeholder='Project Image'
           {...register('projectImage', { required: true })}
-        />
+        /> */}
         <SummitButtonWrapper>
           <Button type='submit' primary label='Submit' />
         </SummitButtonWrapper>

@@ -10,6 +10,10 @@ import SnackBar from './components/SnackBar';
 import { store } from './store';
 import { theme } from './theme';
 
+import 'normalize.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache(),
