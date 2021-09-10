@@ -27,6 +27,11 @@ const TextSection = styled.div`
   padding-top: 2rem;
 `;
 
+const Image = styled.img`
+  height: 200px;
+  width: 200px;
+`;
+
 function Projects() {
   const { loading, error, data } = useAllProjectsQuery();
 
@@ -40,7 +45,7 @@ function Projects() {
             <div key={project.id}>
               <TextSection>{project.title}</TextSection>
               <TextSection>{project.description}</TextSection>
-              <img src={project.images} />
+              <Image src={project.images} />
             </div>
           ))
         : null}

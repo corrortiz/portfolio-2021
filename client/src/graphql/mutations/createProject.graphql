@@ -1,0 +1,9 @@
+mutation CreateProjectMutation($createProjectPayload: ProjectInput!) {
+  createProject(payload: $createProjectPayload) {
+    id
+    title
+    description
+    URL
+    images
+  }
+}

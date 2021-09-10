@@ -1,13 +1,9 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 const defaultOptions = {};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -97,31 +93,64 @@ export type UserInput = {
   password: Scalars['String'];
 };
 
-export type AllProjectsQueryVariables = Exact<{ [key: string]: never }>;
+export type CreateProjectMutationMutationVariables = Exact<{
+  createProjectPayload: ProjectInput;
+}>;
 
-export type AllProjectsQuery = {
-  __typename?: 'Query';
-  projects: Array<{
-    __typename?: 'Project';
-    id: number;
-    title: string;
-    description: string;
-    URL: string;
-    images: string;
-  }>;
-};
+export type CreateProjectMutationMutation = { __typename?: 'Mutation', createProject: { __typename?: 'Project', id: number, title: string, description: string, URL: string, images: string } };
 
-export const AllProjectsDocument = gql`
-  query allProjects {
-    projects {
-      id
-      title
-      description
-      URL
-      images
-    }
+export type AllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+export type AllProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: number, title: string, description: string, URL: string, images: string }> };
+
+export const CreateProjectMutationDocument = gql`
+    mutation CreateProjectMutation($createProjectPayload: ProjectInput!) {
+  createProject(payload: $createProjectPayload) {
+    id
+    title
+    description
+    URL
+    images
   }
-`;
+}
+    `;
+export type CreateProjectMutationMutationFn = Apollo.MutationFunction<CreateProjectMutationMutation, CreateProjectMutationMutationVariables>;
+
+/**
+ * __useCreateProjectMutationMutation__
+ *
+ * To run a mutation, you first call `useCreateProjectMutationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateProjectMutationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createProjectMutationMutation, { data, loading, error }] = useCreateProjectMutationMutation({
+ *   variables: {
+ *      createProjectPayload: // value for 'createProjectPayload'
+ *   },
+ * });
+ */
+export function useCreateProjectMutationMutation(baseOptions?: Apollo.MutationHookOptions<CreateProjectMutationMutation, CreateProjectMutationMutationVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<CreateProjectMutationMutation, CreateProjectMutationMutationVariables>(CreateProjectMutationDocument, options);
+}
+export type CreateProjectMutationMutationHookResult = ReturnType<typeof useCreateProjectMutationMutation>;
+export type CreateProjectMutationMutationResult = Apollo.MutationResult<CreateProjectMutationMutation>;
+export type CreateProjectMutationMutationOptions = Apollo.BaseMutationOptions<CreateProjectMutationMutation, CreateProjectMutationMutationVariables>;
+export const AllProjectsDocument = gql`
+    query allProjects {
+  projects {
+    id
+    title
+    description
+    URL
+    images
+  }
+}
+    `;
 
 /**
  * __useAllProjectsQuery__
@@ -138,35 +167,14 @@ export const AllProjectsDocument = gql`
  *   },
  * });
  */
-export function useAllProjectsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    AllProjectsQuery,
-    AllProjectsQueryVariables
-  >,
-) {
+export function useAllProjectsQuery(baseOptions?: Apollo.QueryHookOptions<AllProjectsQuery, AllProjectsQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<AllProjectsQuery, AllProjectsQueryVariables>(
-    AllProjectsDocument,
-    options,
-  );
+  return Apollo.useQuery<AllProjectsQuery, AllProjectsQueryVariables>(AllProjectsDocument, options);
 }
-export function useAllProjectsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    AllProjectsQuery,
-    AllProjectsQueryVariables
-  >,
-) {
+export function useAllProjectsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AllProjectsQuery, AllProjectsQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<AllProjectsQuery, AllProjectsQueryVariables>(
-    AllProjectsDocument,
-    options,
-  );
+  return Apollo.useLazyQuery<AllProjectsQuery, AllProjectsQueryVariables>(AllProjectsDocument, options);
 }
 export type AllProjectsQueryHookResult = ReturnType<typeof useAllProjectsQuery>;
-export type AllProjectsLazyQueryHookResult = ReturnType<
-  typeof useAllProjectsLazyQuery
->;
-export type AllProjectsQueryResult = Apollo.QueryResult<
-  AllProjectsQuery,
-  AllProjectsQueryVariables
->;
+export type AllProjectsLazyQueryHookResult = ReturnType<typeof useAllProjectsLazyQuery>;
+export type AllProjectsQueryResult = Apollo.QueryResult<AllProjectsQuery, AllProjectsQueryVariables>;
