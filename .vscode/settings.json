@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["aohys", "browserslist", "lottiefiles", "webdev"],
+  "cSpell.words": [
+    "aohys",
+    "blueprintjs",
+    "browserslist",
+    "lottiefiles",
+    "webdev"
+  ],
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "git.ignoreLimitWarning": true
 }

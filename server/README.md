@@ -1,2 +1,2 @@
-# Sever for Control Consult Dasboard
+# Sever for Control Consult Dashboard
 Server for consult control
